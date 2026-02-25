@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "power-monitor-zcu102"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="Darkhan Nurzhakyp", email="darkhan.nur12@gmail.com" },
 ]
