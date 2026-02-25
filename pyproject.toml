@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "power-monitor-zcu102"
+version = "0.1.0"
+authors = [
+  { name="Darkhan Nurzhakyp", email="darkhan.nur12@gmail.com" },
+]
+description = "A Power Monitor tool for ZCU102 that reads INA226 power rails via hwmon."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: System :: Hardware",
+]
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/power_monitor"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
