@@ -5,7 +5,7 @@ from pathlib import Path
 # Add the 'src' directory to the Python path so pytest can find the package
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from power_monitor.power_monitor import PowerMonitor
+from power_monitor import PowerMonitor
 
 # These tests are designed to be run directly on a ZCU102 board with PetaLinux 2022.2.
 # They will fail on a standard PC because the /sys/class/hwmon paths will not exist

@@ -48,6 +48,49 @@ Here is the table of the relevant rails (referenced from the article and board p
 
 ---
 
+## Usage Example
+
+Once the package is installed on the ZCU102 PetaLinux environment, you can use it in your Python scripts.
+
+### 1. Simple Single Read
+```python
+from power_monitor import PowerMonitor
+
+# Initialize the monitor
+pm = PowerMonitor()
+
+# Read the aggregated power domains once
+ps, pl, mgt, total = pm._read_once(verbose=True)
+
+print(f"Total Power: {total:.3f} W")
+```
+
+### 2. Background Measurement (Non-Blocking)
+Useful for measuring power while a separate workload runs.
+```python
+import time
+from power_monitor import PowerMonitor
+
+pm = PowerMonitor(interval=0.5) # Sample every 0.5 seconds
+
+print("Starting background power measurement...")
+pm.start()
+
+# Do your heavy workload here (e.g., neural network inference)
+time.sleep(3.0) 
+
+# Stop monitoring and retrieve records
+pm.stop()
+
+# Summarize and save
+avg_ps, avg_pl, avg_mgt, avg_total = pm.average()
+print(f"Average Total Power during workload: {avg_total:.3f} W")
+
+pm.save_samples("power_log.csv")
+```
+
+---
+
 ## Installation 
 
 ### From source (PetaLinux 2022.2)
