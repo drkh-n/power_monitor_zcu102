@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "power-monitor-zcu102"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Darkhan Nurzhakyp", email="darkhan.nur12@gmail.com" },
 ]
@@ -20,7 +20,7 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-"Homepage" = "https://github.com/yourusername/power_monitor"
+"Homepage" = "https://github.com/drkh-n/power_monitor_zcu102"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
